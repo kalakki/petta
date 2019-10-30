@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+    </head>
+    <body>
+        <br>
+        <p>the array is [12,34,23,54,65,76,443,67]</p><br>
+        <p>click here to get the first element and the first n elements</p><br>
+        <button onclick="print()">click</button>
+        <p id="first"></p>
+        <p id="second"></p>
+        <script>
+           
+            function print(){
+                var array=[12,34,23,54,65,76,443,67];
+                var n=window.prompt("Enter the no of elements to be printed ");
+                document.getElementById("first").innerHTML=array[0];
+                var i;
+		var array1=[];
+                for(i=0;i<n;i++){
+                    //document.getElementById("second").innerHTML= array[i];
+			array1[i]=array[i];
+                }
+		document.getElementById("second").innerHTML= array1;
+
+            }
+        </script>
+    </body>
+</html>

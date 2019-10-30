@@ -1,0 +1,52 @@
+<!doctype html>
+<html>
+    <head>
+        <style>
+            form{
+                padding-left:440px;
+                padding-top:240px;
+                width:520px;
+            }
+            form *{
+                box-sizing: border-box;
+            }
+            label{
+                padding-bottom: 10px;
+                text-align:right;
+            }
+            input,textarea,select{
+                margin-left: 2em;
+                float: right;
+                width: 20em;
+                border: 1px solid #ccc;
+                font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+                font-size: 0.9em;
+                padding: 0.2em;
+                    
+            }
+            button{
+                padding: 1em;
+                border-radius: 0.5em;
+                background: #eee;
+                border: none;
+                font-weight: bold;
+                margin-left: 14em;
+                margin-top: 1.8em;
+	        }
+        </style>
+    </head>
+    <body>
+        <form action="http://localhost:8080/me33/signup.jsp">
+                <h1 style="position:relative ;left:180px ; font-size: 30px; font-family: Georgia;">SIGNUP</h1>
+            <p>
+                <label>
+                UserId: <input type="text" name="userid" required>
+                </label>
+            </p>
+            <p>
+                <label>PassWord: <input type="password" name="pass" required></label>
+            </p>
+            <p><button>Signup</button></p>
+        </form>
+    </body>
+</html>

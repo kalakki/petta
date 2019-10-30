@@ -1,0 +1,23 @@
+<html>
+    <head>
+        <script>
+            
+            function enter(){
+                var name=document.form.Name.value;
+                if(name != ""){
+                    document.writeln("Hello "+name);
+                }
+                else{
+                    window.alert("name field is empty");
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <form name="form">
+            <label>name:<input type="text" name="Name"></label>
+            <button onclick="enter()">enter</button>
+        </form>
+        
+    </body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+    </head>
+    <body>
+        <form name="myform">
+            <label>add an element<input type="text" name="ele"></label>
+            <button onclick="append()">add</button>
+        </form>
+        <p id="a"></p>
+        <script>
+            
+
+            function append(){
+                var name=["a"];
+            document.getElementById("a").innerHTML=name;
+            var item=document.myform.ele.value;
+            name.push(item);
+            document.getElementById("a").innerHTML=name;    
+
+            }
+        </script>
+    </body>
+</html>

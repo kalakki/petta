@@ -1,0 +1,30 @@
+<html>
+    <head>
+        <script>
+            function large(){
+                var array=[21,54,87,23,12];
+                var n,temp;
+                for(var i=0;i<array.length;i++){
+                    for(var j=i+1;j<(array.length);j++){
+                        if(array[i]>array[j]){
+                        temp=array[i];
+                        array[i]=array[j];
+                        array[j]=temp;
+                        } 
+                                  
+                    }
+                    
+                }
+                n=document.form.largest.value;
+                document.writeln("The larger number in the array  is "+array[n]);
+            }
+        </script>
+    </head>
+    <body>
+        The Array is [21,54,87,23,12] <br> <br>
+        <form name="form">
+        <label >enter the position of the largest number required by u <br><input type="text" name="largest"></label> <br>
+        <button onclick="large()"> click here </button> to get the largest number
+        </form>
+    </body>
+</html>

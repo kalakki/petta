@@ -1,0 +1,23 @@
+<script>
+			function validate(){
+				var name=document.Form.Name.value;
+				var pin=document.Form.pin.value;
+				var ph=document.Form.phno.value;
+				var pass=document.Form.pass.value;
+				if(name == null || name == "" || name == /^ [0-9] $/ || name == /^ [0-9][a-z] $/){
+					alert("name must be filled out");
+				}
+				if(pin == /^d{3}w[-]d{3}$/){
+					alert("enter the valid pincode");
+					
+				}
+				if(ph == /^\d{10}$/ || ph.length<10){
+					alert("enter the valid mobile number");
+					
+				}
+				if(pass == /^\W\d$/ || pass.length < 8){
+					alert("enter the confidential password");
+					
+				}
+			}	
+		</script>

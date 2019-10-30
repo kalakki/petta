@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+    <head>
+            
+    </head>
+    <body>
+        <!--<div id="div1">
+        <p>DOM is an document object model</p>
+        <p>it <b id="b1">helps</b> to access the html page dynamically</p>
+        </div>
+        <p>click here to append </p><button onclick="apend()">click</button>
+        <p>click here to replace </p><button onclick="rename()">click</button>
+        <p>click here to delete </p><button onclick="del()">click</button>-->
+        
+	<p>1.append</p><br>
+        <p>2.replace</p><br>
+        <p>3.delete</p><br>
+	<p>4.update</p><br>
+        <button onclick="ld()">Enter your choice</button>
+        <div id="div2">
+
+	
+	</div>
+	<p>To replace</p>
+	<p id="p4">it <b id="b1">helps</b> to access the html page dynamically</p>
+
+        <script>
+            function ld(){
+                var n=window.prompt("Enter your choice");
+                var np=parseInt(n);
+                switch(np){
+                    case 1:
+                        apend();
+			break;
+		    case 2:
+			rename();
+			break;
+		    case 3:
+			del();
+			break;
+		    case 4:
+			upd();
+			break;
+                    default:
+                        var text="none";
+
+
+                }
+                document.getElementById("div1").innerHTML=text;
+            }
+
+            function apend(){
+                var pa = document.createElement("p");
+                pa.id="p3";
+                var s1=window.prompt("Enter the text to append");
+                var pan = document.createTextNode(s1);
+                pa.appendChild(pan); 
+                document.getElementById("div2").appendChild(pa);
+            }
+            function rename(){
+                var re=document.createElement("p");
+                var s2=window.prompt("Enter the text to replace")
+                var ren=document.createTextNode(s2);
+                re.appendChild(ren);
+                var rold=document.getElementById("b1");
+                var parent=rold.parentNode;
+                parent.replaceChild(re, rold);
+            }
+            function del(){
+                var ren=document.getElementById("p3");
+                document.getElementById("div2").removeChild(ren);
+            }
+	    function upd(){
+		var up=document.createElement("p");
+		up.id="p5";
+		var s3=window.prompt("Enter the text to be inserted ");
+		var upe=document.createTextNode(s3);
+		up.appendChild(upe);
+		var upb=document.getElementById("p3");
+		var upbp=upb.parentNode;
+		upbp.insertBefore(up,upb);
+	    	
+	    }
+        </script>
+        
+    </body>
+
+</html>

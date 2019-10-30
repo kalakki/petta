@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+	form{
+		padding-left:140px;
+		padding-top:30px;
+		width:520px;
+	}
+	form *{
+		box-sizing: border-box;
+	}
+	label{
+		padding-bottom: 10px;
+		text-align:right;
+	}
+	input,textarea,select{
+		margin-left: 2em;
+		float: right;
+		width: 20em;
+		border: 1px solid #ccc;
+		font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+		font-size: 0.9em;
+		padding: 0.2em;
+			
+	}
+	#a{
+		/*width:520px;*/
+	}
+	button{
+		padding: 1em;
+			border-radius: 0.5em;
+			background: #eee;
+			border: none;
+			font-weight: bold;
+			margin-left: 14em;
+			margin-top: 1.8em;
+	}
+</style>
+</head>
+<body>
+	<div id="a">
+	<form method="get" action="http://localhost:8080/me33/simple.jsp">
+		<h1 style="position:relative ;left:80px ; font-size: 30px; font-family: Georgia;">REGISTRATION</h1>
+		<p>
+		<label>Name
+		<input type="text" name="sname" required></label> 
+		</p>
+
+		<p>
+		<label>Father's Name
+		<input type="text" name="fname" required></label> 
+		</p>
+
+		<p>
+		<label style="bottom:20px ">DOB
+		<input type="text" name="dob" required>
+		</label>
+		</p>
+		
+		<p>
+		<label >Address
+		<textarea name="address" maxlength="500"  style=" height: 30px;"> </textarea></label> 
+		</p>
+
+		<p>
+		<label >Phone 
+		<input type="text" name="phone"></label>
+		</p>
+
+		<p>
+		<label>Email 
+		<input type="text" name="email" placeholder="abc@gmail.com"></label> 
+		</p>
+
+		<p>
+		<label>mark obtained in 12th
+		<input type="text" name="mark"></label> 
+		</p>
+
+		<p>
+		<label>Near by place
+		<select id="place" name="place">
+		<option value="" selected="selected">Select One</option>
+		<option value="Chennai" >Chennai</option>
+		<option value="Madurai" >Madurai</option>
+		<option value="Coimbatore" >Coimbatore</option>
+		</select>
+		</label> 
+		</p>
+
+		<p><button <!--onclick="window.location.href='signup.html';"-->>Register</button></p>
+	
+	</form>
+</div>
+</form>
+</body>
+</html>
