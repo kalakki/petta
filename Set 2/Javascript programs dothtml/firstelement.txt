@@ -1,0 +1,29 @@
+Write a JavaScript function to get the first element of an array. Passing a
+parameter 'n' will return the first 'n' elements of the array.
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+<script>
+function Arrayop(){
+var n=document.getElementById('lim').value;
+var b=document.getElementById('nth').value;
+n=parseInt(n);
+b=parseInt(b);
+var a = new Array();
+for(var i=0;i<n;i++){
+a[i]=window.prompt("Enter the element "+i+1);
+a[i]=parseInt(a[i]);
+}
+document.writeln("The first element of the array is : ");
+document.writeln(a[0]);
+document.writeln(a.slice(0,b));
+}
+</script></head>
+<body><h1> Sixth Java Script Program </h1>
+<label>Enter limit for array!</label>
+<input type="number" id="lim"><br/>
+<label> N elements of an array </label><br/>
+<input type="number" id="nth">
+<button onclick="Arrayop()">Click me!</button><br/><br/>
+</body></html>

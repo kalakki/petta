@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<?xml-stylesheet type="text/xsl" href="employee.xsl"?>
+<customers>
+<customer no="1">
+<name>Naveen</name>
+<phone>9884067570</phone>
+<Email>naveen@gmail.com</Email>
+<Branch>adyar</Branch>
+<Pet>dog</Pet>
+</customer>
+<customer no="2">
+<name>Madhu</name>
+<phone>9884067570</phone>
+<Email>madhu@gmail.com</Email>
+<Branch>tambaram</Branch>
+<Pet>cat</Pet>
+</customer>
+<customer no="3">
+<name>Suji</name>
+<phone>9962571931</phone>
+<Email>suji@gmail.com</Email>
+<Branch>TNagar</Branch>
+<Pet>fish</Pet>
+</customer>
+<customer no="4">
+<name>Bella</name>
+<phone>8072294628</phone>
+<Email>bella@gmail.com</Email>
+<Branch>TNagar</Branch>
+<Pet>dog</Pet>
+</customer>
+</customers

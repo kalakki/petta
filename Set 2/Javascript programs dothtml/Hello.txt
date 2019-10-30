@@ -1,0 +1,27 @@
+Create a script that asks the user for a name, then greets the user with "Hello" and the user name on the page 4.
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+<script type="text/javascript">
+function greet()
+{
+var un=document.getElementById('name').value;
+if(un==""||un==null)
+{
+alert("Name is required!");
+}
+else
+{
+document.writeln("Hello "+un);
+}
+}
+</script>
+</head>
+<body>
+<h1 align="centre">First Java sript program</h1>
+<label>Enter your name:</label><br/><br/>
+<input type="text" name="name" id="name"><br/><br/>
+<input type="submit" name="" onclick="greet()">
+</body>
+</html>

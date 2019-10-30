@@ -1,0 +1,7 @@
+Cookie Name=new Cookie("name",request.getParameter("first_name"));
+Cookie Email=new Cookie("email",request.getParameter("email"));
+Name.setMaxAge(60*60*24);
+Email.setMaxAge(60*60*24);
+response.addCookie(Name);
+response.addCookie(Email);
+response.setContentType("text/html");

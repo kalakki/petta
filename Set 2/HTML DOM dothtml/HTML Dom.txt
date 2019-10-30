@@ -1,0 +1,58 @@
+<html>
+<body>
+<h1 align="center">HTML DOM Operations</h1>
+<div id="div1">
+<p id="p1">p1:This is a paragraph.</p>
+<p id="p2">p2:This is another paragraph.</p>
+<p>You could<br/>
+1)Create node<br/>
+2)Insert node<br/>
+3)Remove Node<br/>
+4)Replace Node<br/>
+</p>
+<button onclick="dom()">Dom operations</button>
+</div>
+<script>
+function dom()
+{
+var dom = prompt("What do you want to do?");
+switch(dom)
+{
+case "create":
+var para = document.createElement("p1");
+var cr=window.prompt("enter txt to create:");
+var node = document.createTextNode(cr);
+x = para.appendChild(node);
+document.body.appendChild(x);
+break;
+case "remove":
+var parent = document.getElementById("div1");
+var child = document.getElementById(prompt("enter id to
+remove:"));
+parent.removeChild(child);
+break;
+case "replace":
+var para = document.createElement("p");
+var rep=window.prompt("enter txt to replace:");
+var node = document.createTextNode(rep);
+para.appendChild(node);
+var parent = document.getElementById("div1");
+var child = document.getElementById(prompt("enter id to
+replace:"));
+parent.replaceChild(para, child);
+break;
+case "insert":
+var para = document.createElement("p");
+var n=window.prompt("enter txt to insert:");
+var node = document.createTextNode(n);
+para.appendChild(node);
+var element = document.getElementById("div1");
+var child = document.getElementById(prompt("enter id before to
+insert:"));
+element.insertBefore(para, child);
+break;
+}
+}
+</script>
+</body>
+</html>

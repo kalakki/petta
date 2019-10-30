@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE customers[
+<!ELEMENT customers (customer)*>
+<!ELEMENT customer (name,phone,Email,Branch,Pet)>
+<!ELEMENT name (#PCDATA)>
+<!ELEMENT phone (#PCDATA)>
+<!ELEMENT Email (#PCDATA)>
+<!ELEMENT Branch (#PCDATA)>
+<!ELEMENT Pet (#PCDATA)>
+<!ATTLIST customer no NMTOKEN #REQUIRED>
+<!ENTITY l "&l;+91">
+]>
+<?xml-stylesheet type="text/xsl" href="employee.xsl"?>
+<customers>
+<customer no="1">
+<name>Naveen</name>
+<phone>l9884067570</phone>
+<Email>naveen@gmail.com</Email>
+<Branch>adyar</Branch>
+<Pet>dog</Pet>
+</customer>
+<customer no="2">
+<name>Madhu</name>
+<phone>l9884067570</phone>
+<Email>madhu@gmail.com</Email>
+<Branch>tambaram</Branch>
+<Pet>cat</Pet>
+</customer>
+<customer no="3">
+<name>Suji</name>
+<phone>l9962571931</phone>
+<Email>suji@gmail.com</Email>
+<Branch>TNagar</Branch>
+<Pet>fish</Pet>
+</customer>
+<customer no="4">
+<name>Bella</name>
+<phone>l8072294628</phone>
+<Email>bella@gmail.com</Email>
+<Branch>TNagar</Branch>
+<Pet>dog</Pet>
+</customer>
+</customers>\

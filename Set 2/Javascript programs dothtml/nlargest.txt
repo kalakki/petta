@@ -1,0 +1,33 @@
+Write a JavaScript function to get nth largest element from an unsorted
+array
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+<script>
+function sortNumber(a, b) {
+ return a - b;
+}
+function find(){
+var n=document.getElementById('lim').value;
+n=parseInt(n);
+var a = new Array();
+for(var i=0;i<n;i++){
+a[i]=window.prompt("Enter the element "+i+1);
+a[i]=parseInt(a[i]);
+}
+a.sort(sortNumber);
+var p=document.getElementById('nth').value;
+document.writeln(a);
+document.writeln("<br>");
+document.writeln("The "+p+"th largest number is ");
+document.writeln(a[n-p]);
+}
+</script></head>
+<body><h1> Nth largest element from unsorted array!</h1>
+<label>Enter limit for array!</label>
+<input type="number" id="lim"><br/>
+<label> Enter the Nth index of largest number to find </label>
+<input type="number" id="nth">
+<button onclick="find()">Click me!</button>
+</body></html>

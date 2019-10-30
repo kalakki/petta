@@ -1,0 +1,21 @@
+Create a script that prompts the user for a number and then counts from
+1 to that number displaying only the odd numbers.
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+<script>
+function execute(){
+var n=window.prompt("Enter a number");
+n=parseInt(n);
+for(var i=1;i<=n;i=i+2)
+{
+document.writeln(i);
+}
+}
+</script>
+</head>
+<body>
+<h1> Third Java Script Program </h1>
+<button onclick="execute()"> Execute to get odd numbers!! </button>
+</body></html>

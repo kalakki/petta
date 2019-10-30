@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <h1 class="header" style="font-family:courier; font-size:250%;">PAINTINGS</h1>
+<style>
+h1.header{
+ color:red;
+ text-shadow: 5px 5px black;
+}
+ .header{
+ background-color: rgb(94, 0, 106);
+ padding: 20px;
+ text-align: left;
+
+ position: sticky;
+ position: -webkit-sticky;
+ top:0;
+ }
+ #footer{
+ background-color: rgb(94, 0, 106);
+ padding: 20px;
+ text-align: left;
+ color: white;
+ }
+ a.para:link,a.para:visited{
+background-color: #ff0080;
+color:white;
+padding: 20px 25px;
+text-align: center;
+display: inline-grid;
+text-decoration: none;
+float: left;
+margin: 4px 4px;
+ }
+ a.para:hover{
+ background-color:red;
+ }
+#art {
+ list-style-type: none;
+ margin: 0;
+ padding: 0;
+ overflow: hidden;
+ background-color: #ff6347;
+}
+li {
+ float: left;
+}
+li a {
+ display: block;
+ color: white;
+ text-align: center;
+ padding: 14px 16px;
+ text-decoration: none;
+}
+li a:hover {
+ background-color: red;
+}
+div {
+ width: 500px;
+ height: 500px;
+ background-image: url(h1.jpg);
+ -webkit-transition: width 2s;
+ transition: width 2s;
+}
+div:hover {
+ width: 200px;
+
+}
+#myCanvas{
+ float: left;
+}
+</style>
+</head>
+<body>
+<meta charset="UTF-8">
+ <meta name="description" content="Painting website">
+ <meta name="keywords" content="HTML">
+ <meta name="author" content="nandhini">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<ul id="art">
+ <li><a class="active" href="#home">Home</a></li>
+ <li><a href="#allart">All Art</a></li>
+ <li><a href="allcat.html">All Categories</a></li>
+ <li><a href="artist.html">Featured Artist</a></li>
+ <li><a href="reg.html">Registration Form</a></li>
+ <li><a href="#about">About</a></li>
+</ul>
+<marquee> SELL PAINTINGS AND BUY PAINTINGS </marquee>
+<a class="para" href="create.html">CREATE ARTIST ACCOUNT</a>
+<a class="para" href="login.html">GET INTO YOUR ACCOUNT</a>
+<a class="para" href="login1.html">ARE YOU A BUYER?</a>
+<br><br>
+ <canvas id="myCanvas" width="200" height="100" style="border:1px solid #d3d3d3;"></canvas>
+<script>
+var c = document.getElementById("myCanvas");
+var ctx = c.getContext("2d");
+ctx.font = "30px Arial";
+ctx.strokeText("WELCOME",10,50);
+</script>
+ <a name="oilpaintings"></a>
+<img title="oil paintings" src="o3.jpg" width="200" height="200" usemap="#oilpaintings">
+<map name="oilpaintings">
+<area shape="circle" coords="0,0,82,126" alt="paint" href="oil.html">
+</map>
+<video width="500" height="500" controls>
+<source src="v.webm" type="video/webm">
+</video>
+ <audio controls>
+ <source src="apple.mp3" type="audio/mp3">
+ </audio>
+ <div></div>
+
+ <p id="footer">CONTACT US:9656854723</p>
+
+</body>
+</html>
+ALL ARTS:
+<!doctype html>
+<html>
+<head>
+<title>PAINTING/ART WEBSITE</title>
+<a href="login.html">LOGIN</a>
+<a href="oil.html">OIL PAINTINGS</a>
+</head>
+<!--body style="background:url(pt4.jpg);background-repeat:no-repeat;background-size:1500px
+1200px";-->
+<body>
+<meta charset="UTF-8">
+ <meta name="description" content="Painting website">
+ <meta name="keywords" content="HTML">
+ <meta name="author" content="nandhini">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<a href="#styles">styles</a>
+<h1 align="center">WELCOME TO THE PAINTING WORLD</h1>
+<img src="pt.png" alt="wait" width="500" height="500">
+<h3>VARIETIES:</h3>
+<ul>
+<a name="styles"><h2>various styles of paintings</h2></a>
+<li>oil paintings</li>
+<li>pencil drawings</li>
+<li>water colour</li>
+<li>Encaustic Painting</li>
+</ul>
+<ol>
+<li>glass painting</li>
+<li>acrylic painting</li>
+<li>ink wash painting</li>
+</ol>
+<style>
+table,th,td{
+border: 1px solid;
+border-collapse: collapse;
+}
+th,td{
+padding: 5px;
+}
+</style>
+<table>
+<tr>
+<th>paintings</th>
+<th>range of amounts</th>
+</tr>
+<tr>
+<td>glass paintings</td>
+<td>30000-40000</td>
+</tr>
+<tr>
+<td>oil paintings</td>
+<td>5000-10000</td>
+</tr>
+</table>
+<form>
+<br>
+FIRST NAME:
+<input type="text" name="first name"><br><br>
+LAST NAME:
+<input type="text" name="last name"><br>
+GENDER:<br>
+<input type="radio" name="gender" value="male">Male<br>
+<input type="radio" name="gender" value="female">Female<br>
+<input type="radio" name="gender" value="others">Others<br>
+<br>
+PAINTING STYLES:<br><br>
+<select name="arts">
+<option value="oil paintings">oil paintings</option>
+<option value="glass paintings">glass paintings</option>
+<option value="acrylic paintings">acrylic paintings</option>
+<option value="ink wash paintings">ink wash paintings</option>
+</select><br><br>
+<input type="submit" value="submit">
+</form>
+<br>
+<img title="oil paintings" src="o3.jpg" width="150" height="150" usemap="#oilpaintings">
+<map name="oilpaintings">
+<area shape="circle" coords="0,0,82,126" alt="paint" href="oil.html">
+</map>
+</body>
+</html>
+ALL CATEGORY:
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>create</title>
+ <link rel="stylesheet" href="allcat.css">
+</head>
+<style type="text/css">
+.test{
+white-space: nowrap;
+width:200px;
+overflow: hidden;
+border:2px solid black;
+}
+div.test:hover{
+overflow:visible;
+}
+.para1 {
+ width: 200px;
+ height: 170px;
+ background-image:url(h.jpg);
+ background-image: url(b3.jpg);
+ -webkit-animation-name: example; /* Safari 4.0 - 8.0 */
+ -webkit-animation-duration: 4s; /* Safari 4.0 - 8.0 */
+ animation-name: example;
+ animation-duration: 7s;
+/* Safari 4.0 - 8.0 */
+@-webkit-keyframes example {
+ from {background-image: url(paint.jpg);}
+ to {background-image:url(b2.jpg);}
+}
+</style>
+<body>
+ <h2>ALL PAINTINGS</h2>
+ <!--img src="o3.jpg" width="350px" height="250px"-->
+ <div class="para1"></div>
+ <div class="para">
+ ART CATEGORY:oil painting<br>
+ ARTIST :Ganesh varma <br>
+ SIZE:250PX
+ </div>
+ <br>
+ <div class="test" style="text-overflow: clip;">This shows the various categories of paintings</div>
+ </body>
+</html>
+REGISTRATION.HTML:
+<!DOCTYPE html>
+<html>
+<head>
+<title>registration form</title>
+<style type="text/css">
+body{
+background-image: url(pt4.jpg);
+background-repeat: no-repeat;
+background-position: all;
+background-size: 2000px 2000px;
+color:white;
+}
+table,tr{
+border-style: solid;
+border-color: white;
+padding: 30px;
+}
+</style>
+<script type="text/javascript">
+function validate(){
+var fname=document.getElementById('fname');
+var emailid=document.getElementById('email');
+var pwd=document.getElementById('pwd');
+var phone=document.getElementById('pno');
+if(inalpha(fname,"*name is mandatory,only alphabets*")){
+if(eval(emailid,"*please enter valid email id*")){
+if(passval(pwd,"*password should contains lowercase,uppercase,number and special
+character*")){
+if(phval(phone,"*enter corrret phone number*")){
+return true;
+}
+}
+}
+}
+return false;
+}
+function inalpha(inp,msg){
+var name=/^[a-zA-Z]{3,30}$/;
+if(inp.value.match(name)){
+return true;
+}
+else{
+window.alert(msg);
+inp.focus();
+return false;
+}
+}
+function eval(inp,msg){
+var eid=/^[a-zA-Z0-9._]+@[a-zA-Z0-9._]+\.[a-zA-Z]{2,3}$/;
+if(inp.value.match(eid)){
+return true;
+}
+else{
+window.alert(msg);
+inp.focus();
+return false;
+}
+}
+function passval(inp,msg){
+var password=/^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*]).{8,12}$/;
+if(inp.value.match(password)){
+return true;
+}
+else{
+window.alert(msg);
+inp.focus();
+return false;
+}
+}
+function phval(inp,msg){
+var phn=/^\d{10}$/;
+if(inp.value.match(phn)){
+return true;
+}
+else{
+window.alert(msg);
+inp.focus();
+return false;
+}
+}
+</script>
+</head>
+<body>
+<center>
+<form action="http://localhost:8080/sample/Form" method="get" name="forms"
+onsubmit="return validate()">
+<table>
+<thead>REGISTRATION FORM:</thead>
+<tr>
+<td> NAME:</td>
+<td>
+<input type="text" id="fname" name="first_name" required></td></tr>
+<br>
+<br>
+<tr>
+<td>EMAIL:</td>
+<td><input type="text" id="email" name="email" required></td></tr>
+<br><br>
+<tr><td>PASSWORD:</td>
+<td><input type="password" id="pwd" name="pwd" required></td></tr>
+<br><br>
+<tr><td>MOBILE:</td>
+<td><input type="text" id="pno" name="pno" required></td></tr>
+<br><br>
+<tr><td>YOUR INTERESTED PAINTINGS:</td>
+<td><select name="category" required="select your favo">
+<option value="oil paintings">OIL PAINTINGS</option>
+<OPTION value="water color">WATER COLOR</OPTION>
+<option value="acrylic painting">ACRYLIC PAINTINGS</option>
+</select></td></tr>
+<tr>
+<td>GENDER:</td>
+<td>
+<input type="radio" name="gender" value="male"
+required>male<br></td>
+<td> <input type="radio" name="gender" value="female">female<br>
+</td>
+</tr><br>
+<tr>
+<td>DATE OF BIRTH:</td>
+<td>
+<input type="date" name="date" required>
+</td>
+</tr>
+<br><tr>
+<td>
+<input type="submit" name="submit"></td></tr>
+</table>
+</form>
+</center>
+</body>
+</html>
+OIL.HTML:(frames)
+<!doctype html>
+<html>
+<head>
+<title> oil paintings </title>
+</head>
+<frameset cols="30%,30%,30%">
+<frame name="top" src="o3.jpg">
+<frame name="main" src="o2.jpg">
+<frame name="bottom" src="o1.jpg">
+</frameset>
+<body>
+<video width="500" height="500" >
+<source src="v.webm" type="video/webm">
+</video>
+</body>
+</html>
+LOGIN.HTML:
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>login</title>
+</head>
+<body>
+<center>
+<form method="get" name="forms" >
+<table>
+<thead style="text-align: center;">CREATE NEW ACCOUNT</thead>
+<tr>
+<td>NAME:</td>
+<td>
+<input type="text" id="fname" name="first_name" placeholder="enter your name"
+required></td></tr>
+<br>
+<br>
+<tr>
+<td>EMAIL:</td>
+<td><input type="text" id="email" name="email" placeholder="enter valid id"
+required></td></tr>
+<br><br>
+<tr>
+<td>USERNAME:</td>
+<td><input type="text" name="uname" id="uname" placeholder="enter your
+name"></td><br><br></tr>
+<tr><td>
+PASSWORD:</td>
+<td><input type="text" name="pwd" id="pwd" placeholder="enter a valid
+password"></td><br><br></tr>
+<tr><td>
+<input type="submit" value="submit" onclick="return validate()"></td></tr>
+<tr><td>
+<input type="submit" value="cancel"></td></tr>
+</table>
+</form>
+</center>
+</body>
+</html>
+ALLCAT.CSS:
+.para{
+width: 200px;
+ padding: 10px;
+ border: 10px solid gray;
+ margin: 0;
+}
+*{
+ font-size: 12;
+ font-family:cursive
+}
+LOGIN.CSS:
+body{
+background-image: url(pt2.jpg);
+background-repeat: no-repeat;
+background-position: all;
+background-size: 2000px 2000px;
+color:white;
+}
+table,tr{
+border-style:double;
+border-color: black;
+padding: 30px;
+}
+HOME.CSS:
+h1.header{
+ color:red;
+ text-shadow: 5px 5px black;
+}
+ .header{
+ background-color: rgb(94, 0, 106);
+ padding: 20px;
+ text-align: left;
+ position: sticky;
+ position: -webkit-sticky;
+ top:0;
+ }
+ #footer{
+ background-color: rgb(94, 0, 106);
+ padding: 20px;
+ text-align: left;
+ color: white;
+ }
+ a.para:link,a.para:visited{
+background-color: #ff0080;
+color:white;
+padding: 20px 25px;
+text-align: center;
+display: inline-grid;
+text-decoration: none;
+float: left;
+margin: 4px 4px;
+ }
+ a.para:hover{
+ background-color:red;
+ }
+#art {
+ list-style-type: none;
+ margin: 0;
+ padding: 0;
+ overflow: hidden;
+ background-color: #ff6347;
+}
+li {
+ float: left;
+}
+li a {
+ display: block;
+ color: white;
+ text-align: center;
+ padding: 14px 16px;
+ text-decoration: none;
+}
+li a:hover {
+ background-color: red;
+}
+div {
+ width: 500px;
+ height: 500px;
+ background-image: url(h1.jpg);
+ -webkit-transition: width 2s;
+ transition: width 2s;

@@ -1,0 +1,419 @@
+REGISTER.JSP
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>User Data</title>
+</head>
+<style>
+div.ex {
+text-align: right width:300px;
+padding: 10px;
+border: 5px solid grey;
+margin: 0px
+}
+</style>
+<body>
+<h1>Registration Form</h1>
+<div class="ex">
+<form action="RegisterCon.jsp" method="post">
+<table style="with: 50%">
+<tr>
+<td>Full Name</td>
+<td><input type="text" name="fullname" /></td>
+</tr>
+<tr>
+<td>Username</td>
+<td><input type="text" name="userName" /></td>
+</tr>
+<tr>
+<td>Password</td>
+<td><input type="password" name="pass" /></td>
+</tr>
+<tr>
+<td>Address</td>
+<td><input type="text" name="address" /></td>
+</tr>
+<tr>
+<td>Age</td>
+<td><input type="text" name="age" /></td>
+</tr>
+<tr>
+<td>Qualification</td>
+<td><input type="text" name="qual" /></td>
+</tr>
+<tr>
+<td>Percentage</td>
+<td><input type="text" name="percent" /></td>
+</tr>
+<tr>
+<td>Year Passed</td>
+<td><input type="text" name="yop" /></td>
+</tr>
+</table>
+<input type="submit" value="register" />
+</form>
+<br>
+</div>
+</body>
+</html>
+
+REGISTERCON.JSP:
+<%@ page import ="java.sql.*" %>
+<%
+String fullname = request.getParameter("fullname");
+String userName = request.getParameter("userName");
+String pass = request.getParameter("pass");
+String address = request.getParameter("address");
+String age = request.getParameter("age");
+String qual = request.getParameter("qual");
+String percent = request.getParameter("percent");
+String yop = request.getParameter("yop"); %>
+<%
+try{
+Class.forName("com.mysql.jdbc.Driver");
+Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/m","root", "root");
+Statement st = con.createStatement();
+//ResultSet rs;
+int i = st.executeUpdate("insert into student(name, userName, pass, addr, age, qual,percent,year)
+values ('" + fullname + "','" + userName + "','" + pass + "','" + address + "','" + age + "', '" + qual +"','" +
+percent + "', '" +yop+"') ");
+out.println("Data is inserted");
+if (i > 0) {
+//session.setAttribute("userid", user);
+response.sendRedirect("welcome.jsp");
+// out.print("Registration Successfull!"+"<a href='index.jsp'>Go to Login</a>");
+} else {
+response.sendRedirect("index.jsp");
+}
+}
+catch(Exception e)
+{
+out.println(e);
+e.printStackTrace();
+}
+%>
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+ <head>
+ <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+ <title>JSP Example</title>
+ </head>
+ <body background="bg.jpg">
+ <form method="post" action="login.jsp">
+ <center>
+ <table border="1" width="30%" cellpadding="3">
+ <thead>
+ <tr>
+ <th colspan="2">Login Here</th>
+ </tr>
+ </thead>
+ <tbody>
+ <tr>
+ <td>User Name</td>
+ <td><input type="text" name="uname" value="" /></td>
+ </tr>
+ <tr>
+ <td>Password</td>
+ <td><input type="password" name="pass" value="" /></td>
+ </tr>
+ <tr>
+ <td><input type="submit" value="Login" /></td>
+ <td><input type="reset" value="Reset" /></td>
+ </tr>
+ <tr>
+ <td colspan="2">Yet Not Registered!! <a href="register.jsp">Register
+Here</a></td>
+ </tr>
+ </tbody>
+ </table>
+ </center>
+ </form>
+ </body>
+</html>
+<%@ page import ="java.sql.*" %>
+<%
+String userid = request.getParameter("uname");
+String pwd = request.getParameter("pass");
+Class.forName("com.mysql.jdbc.Driver");
+Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/m","root", "root");
+Statement st = con.createStatement();
+ResultSet rs;
+rs = st.executeQuery("select * from naveen where name='" + userid + "' and password='" + pwd +
+"'");
+if (rs.next()) {
+session.setAttribute("userid", userid);
+//out.println("welcome " + userid);
+//out.println("<a href='logout.jsp'>Log out</a>");
+response.sendRedirect("success.jsp");
+} else {
+out.println("Invalid password <a href='index.jsp'>try again</a>");
+}
+%>
+<%
+if ((session.getAttribute("userid") == null) || (session.getAttribute("userid") == "")) {
+%>
+You are not logged in<br/>
+<a href="index.jsp">Please Login</a>
+<%} else {
+%>
+Welcome <%=session.getAttribute("userid")%>
+<a href='logout.jsp'>Log out</a>
+<%
+}
+%>
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body background="bg.jpg">
+<form action="validate1.jsp" method="post">
+<br/><br/><label>Question1</label><br/>
+Which of the following are correct ways of creating an array?
+(i) state[0] = “karnataka”;
+(ii) $state[] = array(“karnataka”);
+(iii) $state[0] = “karnataka”;
+(iv) $state = array(“karnataka”);
+<br/>
+<input type="radio" name="q1" value="a">A. (iii) and (iv)
+<input type="radio" name="q1" value="b">B. (ii) and (iii)
+<input type="radio" name="q1" value="c">C. Only (i)<br/><br/>
+<label>Question2</label><br/>
+What will be the output of the following PHP code ?
+< ?php
+echo $red;
+?>
+<br/>
+<input type="radio" name="q2" value="a">A. 0
+<input type="radio" name="q2" value="b">B. Nothing
+<input type="radio" name="q2" value="c">C. True<br/><br/>
+<label>Question3</label><br/>
+Server side scripting websites consists of two main parts, one is scripting language
+and other is
+<br/>
+<input type="radio" name="q3" value="a">A. Scripting engine
+<input type="radio" name="q3" value="b">B. User interaction mode
+<input type="radio" name="q3" value="c">C. Server interaction mode<br/><br/>
+<label>Question4</label><br/>
+Connecting websites to backend servers, processing data and controlling behavior of
+higher layers, all these things are done by<br/>
+<input type="radio" name="q4" value="a">A. HTML language
+<input type="radio" name="q4" value="b">B. CSS scripts
+<input type="radio" name="q4" value="c">C. Server side PHP scripts<br/><br/>
+<label>Question5</label><br/>
+JavaScript is ______ Side scripting language
+<br/>
+<input type="radio" name="q5" value="a">a. Server
+<input type="radio" name="q5" value="b">b. Client
+<input type="radio" name="q5" value="c">c. Browser<br/><br/>
+<input type="submit" value="Next Page" /><br/>
+</form>
+</body>
+</html>
+<%@ page import ="java.sql.*" %>
+<%
+String qa1=request.getParameter("q1");
+String qa2=request.getParameter("q2");
+String qa3=request.getParameter("q3");
+String qa4=request.getParameter("q4");
+String qa5=request.getParameter("q5");
+int c1=0,c2=0,c3=0,c4=0,c5=0,c;
+try
+{
+Class.forName("com.mysql.jdbc.Driver");
+Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/m","root",
+"root");
+Statement st = con.createStatement();
+ResultSet rs;
+rs = st.executeQuery("select * from answer");
+while(rs.next())
+{
+if(qa1.equals(rs.getString("q1")))
+{
+c1=c1+1;
+}
+if(qa2.equals(rs.getString("q2")))
+{
+c2=c2+1;
+}
+if(qa3.equals(rs.getString("q3")))
+{
+c3=c3+1;
+}
+if(qa4.equals(rs.getString("q4")))
+{
+c4=c4+1;
+}
+if(qa5.equals(rs.getString("q5")))
+{
+c5=c5+1;
+}
+}
+c=c1+c2+c3+c4+c5;
+session.setAttribute("c1",c1);
+session.setAttribute("c2",c2);
+session.setAttribute("c3",c3);
+session.setAttribute("c4",c4);
+session.setAttribute("c5",c5);
+session.setAttribute("c",c);
+}catch(Exception e)
+{
+out.println(e);
+}
+%>
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+<form action="validate.jsp" method="post">
+<label>Question6</label><br/>
+In JavaScript, _________ is an object of the target language data type that encloses
+an object of the source language.<br/>
+<input type="radio" name="q6" value="a">a wrapper
+<input type="radio" name="q6" value="b">b.) a link
+<input type="radio" name="q6" value="c">c.) a cursor<br/><br/>
+<label>Question7</label><br/>
+colspan=n can be added to only what tag?
+<br/>
+<input type="radio" name="q7" value="a">a.) table
+<input type="radio" name="q7" value="b">b.) td
+<input type="radio" name="q7" value="c">c.) tr<br/><br/>
+<label>Question8</label><br/>
+The TFOOT section of a table must appear before the TBODY section.
+<br/>
+<input type="radio" name="q8" value="a">a.) FALSE
+<input type="radio" name="q8" value="b">b.) TRUE
+<br/><br/>
+<label>Question9</label><br/>
+Which of the following css property is used to define a delay before an
+animation starts?<br/>
+<input type="radio" name="q9" value="a">a.) transform-delay
+<input type="radio" name="q9" value="b">b.) delay-function
+<input type="radio" name="q9" value="c">c.) delay-animation<br/><br/>
+<label>Question10</label><br/>
+Which of the following selector is used to selects siblings?
+<br/>
+<input type="radio" name="q10" value="a">a.) ::after
+<input type="radio" name="q10" value="b">b.) E ~ F
+<input type="radio" name="q10" value="c">c.) :checked<br/><br/>
+<input type="submit" value="Submit" /><br/>
+<input type="reset" value="Reset" />
+</form>
+</body>
+</html>
+<%@ page import ="java.sql.*" %>
+<%
+String qa6=request.getParameter("q6");
+String qa7=request.getParameter("q7");
+String qa8=request.getParameter("q8");
+String qa9=request.getParameter("q9");
+String qa10=request.getParameter("q10");
+String name=(String)session.getAttribute("userid");
+int c6=0,c7=0,c8=0,c9=0,c10=0,t=0;
+try
+{
+Class.forName("com.mysql.jdbc.Driver");
+Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/m","root",
+"root");
+Statement st = con.createStatement();
+ResultSet rs;
+rs = st.executeQuery("select * from answer");
+while(rs.next())
+{
+if(qa6.equals(rs.getString("q6")))
+{
+c6=c6+1;
+}
+if(qa7.equals(rs.getString("q7")))
+{
+c7=c7+1;
+}
+if(qa8.equals(rs.getString("q8")))
+{
+c8=c8+1;
+}
+if(qa9.equals(rs.getString("q9")))
+{
+c9=c9+1;
+}
+if(qa10.equals(rs.getString("q10")))
+{
+c10=c10+1;
+}
+}
+Integer u=(Integer)session.getAttribute("c");
+t=(u+c6+c7+c8+c9+c10);
+session.setAttribute("c6",c6);
+session.setAttribute("c7",c7);
+session.setAttribute("c8",c8);
+session.setAttribute("c9",c9);
+session.setAttribute("c10",c10);
+session.setAttribute("t",t);
+int i = st.executeUpdate("update student set score='"+t+"' where
+userName='"+name+"'");
+}catch(Exception e)
+{
+out.println(e);
+}
+%>
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="Profile.css">
+<title>Profile</title>
+<style>
+table, th, td {
+border: 1px solid black;
+}
+</style>
+</head>
+<body>
+<table style="width:50%">
+<tr>
+<th>Question Number</th>
+<th>Score</th>
+</tr>
+<tr>
+<td>Q1</td>
+<td><%=session.getAttribute("c1")%></td>
+</tr>
+<tr>
+<td>Q2</td>
+<td><%=session.getAttribute("c2")%></td>
+</tr><tr>
+<td>Q3</td>
+<td><%=session.getAttribute("c3")%></td>
+</tr><tr>
+<td>Q4</td>
+<td><%=session.getAttribute("c4")%></td>
+</tr><tr>
+<td>Q5</td>
+<td><%=session.getAttribute("c5")%></td>
+</tr><tr>
+<td>Q6</td>
+<td><%=session.getAttribute("c6")%></td>
+</tr><tr>
+<td>Q7</td>
+<td><%=session.getAttribute("c7")%></td>
+</tr><tr>
+<td>Q8</td>
+<td><%=session.getAttribute("c8")%></td>
+</tr><tr>
+<td>Q9</td>
+<td><%=session.getAttribute("c9")%></td>
+</tr><tr>
+<td>Q10</td>
+<td><%=session.getAttribute("c10")%></td>
+</tr>
+<tr>
+<th>Total:</th>
+<th><%=session.getAttribute("t")%></th>
+</tr>
+</table>
+<h8><button class="button" onclick=location.href="validate1.jsp" style="background-color:
+white">Back</button></h8>
+</body>
+</html>
